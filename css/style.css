@@ -1,0 +1,276 @@
+/********************* NAVIGATION *********************/
+.random-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    #top .random-btn {
+        position: inital;
+    }
+
+    #top .random-btn-container {
+        width: 100%;
+    }
+
+    #top .nav-header {
+        margin-bottom: 1rem;
+    }
+}
+
+.nav-header {
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.nav-header a {
+    color: var(--primary);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.1rem;
+}
+
+.nav-header a:hover {
+    text-decoration: underline;
+}
+
+/********************* END NAVIGATION *********************/
+
+/********************* SEARCH *********************/
+#searchbox .search-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#searchbox .search-controls input {
+    flex: 1;
+}
+
+#searchbox .search-controls select {
+    padding: 4px 10px;
+    color: var(--primary);
+    font-weight: bold;
+    border: 2px solid var(--tertiary);
+    border-radius: var(--radius);
+    background-color: var(--entry);
+    cursor: pointer;
+}
+
+#searchbox .search-controls select:focus {
+    border-color: var(--secondary);
+    outline: none;
+}
+
+/********************* END SEARCH *********************/
+
+/********************* SINGLE POST *********************/
+ruffle-player {
+    width: 100%;
+    height: 100%;
+}
+
+.post-single .post-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-header-inner {
+    display: block;
+}
+
+.post-header-inner.share-btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    text-wrap: nowrap;
+}
+
+.share-btn:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+.share-icon {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--theme);
+    color: var(--content);
+    padding: 12px 24px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.notification.show {
+    opacity: 1;
+}
+
+/********************* END SINGLE POST *********************/
+
+/********************* AUTHORS PAGE *********************/
+.author-page-options-container,
+.author-options-inner-container,
+#refresh-btn {
+    display: flex;
+}
+
+.author-options-inner-container {
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+#refresh-btn-icon {
+    margin-left: 10px;
+}
+
+#spinner {
+    width: 20px;
+    height: 20px;
+}
+
+.spin-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+    transform-origin: center center;
+}
+
+.post-entry {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--border);
+    border-radius: 4px;
+}
+
+.post-entry:hover {
+    background-color: var(--code-bg);
+}
+
+.entry-header {
+    margin-bottom: 0.5rem;
+}
+
+.entry-content {
+    margin: 1rem 0;
+}
+
+.entry-footer {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/********************* END AUTHORS PAGE *********************/
+
+/********************* ARCHIVE PAGE *********************/
+.archive-year {
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.archive-year:not(:last-of-type) {
+    border: none
+}
+
+/********************* END ARCHIVE PAGE *********************/
+
+/********************* GALLERY PAGE *********************/
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 1rem 0;
+}
+
+.gallery-item {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.gallery-image-wrapper {
+    position: relative;
+    height: 100%;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.03);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--primary-rgb, 43, 45, 66), 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: 8px;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-title {
+    color: var(--primary);
+    font-size: 2.1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+/********************* END GALLERY PAGE *********************/
